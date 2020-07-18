@@ -31,5 +31,9 @@ export class CdkPipelinesPipelineStack extends Stack {
         buildCommand: "npm run build",
       }),
     });
+
+    pipeline.addApplicationStage(
+      new CdkPipelinesStackStage(this, "Development")
+    );
   }
 }
